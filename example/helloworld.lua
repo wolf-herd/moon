@@ -1,3 +1,10 @@
+--[[
+Description: 
+Author: wolf-herd
+Date: 2020-12-19 14:55:18
+LastEditTime: 2020-12-19 16:13:48
+LastEditors: wolf-herd
+--]]
 local moon = require("moon")
 
 local socket = require("moon.socket")
@@ -13,6 +20,7 @@ end)
 
 socket.on("message",function(fd, msg)
     --echo message to client
+    print("message ", fd, moon.decode(msg, "Z"))
     socket.write(fd, moon.decode(msg, "Z"))
 end)
 
